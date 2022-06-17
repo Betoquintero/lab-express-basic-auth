@@ -6,7 +6,7 @@ const userSchema = new Schema({
     type: String,
     unique: true
   },
-  hashedPasword: {
+  hashedPassword: {
     type: String,
   } 
 });

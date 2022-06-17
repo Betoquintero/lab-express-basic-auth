@@ -1,0 +1,19 @@
+<h1>New account</h1>
+
+<div>
+    <form action = '/auth/signup' method = "POST">
+
+    <label> Username</label>
+    <input type = 'text' name = 'username'/>
+
+    <label>Password</label>
+    <input type = "password" name = "password"/>
+
+    {{#if error}}
+    <p style = "color: red">{{error}}</p>
+    {{/if}}
+
+    <button type="submit">Create account</button>
+
+    </form>
+</div>

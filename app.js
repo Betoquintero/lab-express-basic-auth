@@ -29,6 +29,8 @@ app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`;
 // 👇 Start handling routes here
 const index = require('./routes/index');
 const userRouter = require ('./routes/auth')
+const mainRouter = require ('./routes/main')
+const privateRouter = require ('./routes/private')
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 
@@ -54,6 +56,8 @@ app.use(
 
 app.use('/', index);
 app.use('/auth', userRouter)
+app.use('/main', mainRouter)
+app.use('/private', privateRouter)
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app);
